@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace Atividades_fixacao_FUNCTIONS
             //atividade-3//
             Console.Write($"Digite o numero: ");
             int numero = Convert.ToInt32( Console.ReadLine() );
+
             Console.WriteLine($"O fatorial do numero {numero} é {fatorial(numero)}");
             Console.ReadKey();
         }
@@ -59,11 +61,9 @@ namespace Atividades_fixacao_FUNCTIONS
             if (num > 0) 
             {
                 int fac = 1;
-                for (int i = num; i !=0; i--)
+                for (int i = 1; i <= num; i++)
                 {
-                    fac = num * fac;
-                    Console.WriteLine($"{num} X {num} = {fac}");
-                    num = num--;
+                    fac *= i;
                 }
                 return fac;
             }
