@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace algoritimosLista13_12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcao = 0;
+            do
+            {
+                opcao = Menu();
+
+                switch (opcao)
+                {
+                    case 1:
+                        Console.WriteLine("Digite um numero para par = TRUE impar = FALSE");
+                        Console.Write("Digite:");
+                        int numero = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(Par(numero));
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Digite o raio de um circulo");
+                        Console.Write(">>> ");
+                        double raio = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"Perimetro : {Perimetro(raio)} Area: {Area(raio)}");
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        Console.WriteLine($"Passe um valor em  Fahrenheit, será transformado em Célcius!");
+                        Console.Write(">>> ");
+                        double fire = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"{fire} em firehight é {ConverterFireEmGraus(fire):F2} graus em célcius!");
+                        Console.ReadKey();
+                        break;
+                    case 4:
+                        Console.WriteLine("Digite a quantidade de provas aplicadas ↓");
+                        Console.Write(" → → → ");
+                        int quantProva = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine($"Sua média é de: {MediaProva(quantProva)}");
+                        Console.ReadKey();
+                        break;
+                    case 5:
+
+                        break; 
+
+                }
+            }while ( opcao!=10);
+        }
+        static bool Par(int num)
+        {
+            return (num % 2 == 0) ? true : false;
+        }
+        //questao 2
+        static double Area(double raio)
+        {
+            return Math.PI * (raio * raio);
+        }
+        static double Perimetro(double raio)
+        {
+            return 2 * Math.PI * raio;
+        }
+
+        //questao 3 
+        static double ConverterFireEmGraus(double fire)
+        {
+            return (fire - 32) / 9 * 5;
+        }
+        //questao 4
+        static double MediaProva(int provas) 
+        {
+            int somageral = 0;
+            for (int i = 0; i != provas; i++)
+            {
+                Console.WriteLine($"Digite o valor da {i+1}° prova: ");
+                int soma = Convert.ToInt32(Console.ReadLine());
+                somageral += soma;
+            }
+            return somageral / provas;
+        }
+        //questao 5
+        static double FormulaPeso(double masc, double femi)
+        {
+            return 
+        }
+        static double Peso(int peso)
+        {
+            int sexo = 0;
+            Console.WriteLine(" ► 1 masculino");
+            Console.WriteLine(" ► 2 feminino");
+            Console.WriteLine("►►►");
+            sexo =Convert.ToInt32(Console.ReadLine());
+            switch (sexo) 
+            {
+                case 1:
+
+                    break; 
+                case 2:
+                    break;
+
+            }
+            return peso * peso;
+        }
+
+        static int Menu() {
+            Console.WriteLine(">>> MENU <<<");
+            Console.WriteLine(" 1 - par TRUF ou FALSE");
+            Console.WriteLine(" 2 - Área e Perímetro de um circulo");
+            Console.WriteLine(" 3 - graus e Fahrenheit");
+            Console.WriteLine(" 4 - Média prova");
+            Console.WriteLine(" 5 - Peso ideal");
+            Console.WriteLine(" 6 - par TRUF ou FALSE");
+            Console.WriteLine(" 7 - par TRUF ou FALSE");
+            Console.WriteLine(" 8 - par TRUF ou FALSE");
+            Console.WriteLine(" 9 - par TRUF ou FALSE");
+            Console.WriteLine(" 10 - End");
+            Console.Write("Digite su ecolha >>> ");
+            int escolha = Convert.ToInt32(Console.ReadLine()); 
+            
+            return escolha;
+        }
+    }
+}
